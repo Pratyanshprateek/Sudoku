@@ -1,0 +1,3 @@
+/Users/mayank/Downloads/Pratty-proj/Sudoku/build/CMakeFiles/sudoku_gui.dir
+/Users/mayank/Downloads/Pratty-proj/Sudoku/build/CMakeFiles/edit_cache.dir
+/Users/mayank/Downloads/Pratty-proj/Sudoku/build/CMakeFiles/rebuild_cache.dir
