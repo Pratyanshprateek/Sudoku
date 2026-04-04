@@ -1,4 +1,3 @@
-# Sudoku[README.md](https://github.com/user-attachments/files/26481632/README.md)
 # Sudoku GUI (C++ + SFML)
 
 ![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
