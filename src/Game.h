@@ -65,6 +65,7 @@ private:
     sf::Text subtitleText_;
     sf::Text timerText_;
     sf::Text statusText_;
+    sf::Text authorText_;
     std::vector<Button> buttons_ {};
 
     const sf::Color backgroundColor_ {18, 20, 28};
@@ -80,7 +81,7 @@ private:
     const sf::Color highlightButtonColor_ {65, 104, 214};
 
     const float windowWidth_ {900.0f};
-    const float windowHeight_ {760.0f};
+    const float windowHeight_ {860.0f};
     const float boardLeft_ {90.0f};
     const float boardTop_ {150.0f};
     const float cellSize_ {60.0f};
