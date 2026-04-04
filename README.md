@@ -1,4 +1,4 @@
-# Sudoku GUI (C++ + SFML)
+# Sudoku GUI (C++ & SFML)
 
 ![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
 ![SFML](https://img.shields.io/badge/SFML-3.0%2B-brightgreen.svg)
