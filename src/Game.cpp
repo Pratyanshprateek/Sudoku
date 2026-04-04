@@ -20,7 +20,7 @@
 
 namespace {
 constexpr float kHeaderHeight = 110.0f;
-constexpr float kFooterHeight = 70.0f;
+constexpr float kFooterHeight = 110.0f;
 
 sf::Color withAlpha(sf::Color color, std::uint8_t alpha) {
     color.a = alpha;
@@ -59,11 +59,12 @@ bool Game::Button::contains(sf::Vector2f point) const {
 }
 
 Game::Game()
-    : window_(sf::VideoMode({900u, 760u}), "Sudoku GUI"),
+    : window_(sf::VideoMode({900u, 860u}), "Sudoku GUI"),
       titleText_(font_),
       subtitleText_(font_),
       timerText_(font_),
-      statusText_(font_) {
+      statusText_(font_),
+      authorText_(font_) {
     window_.setFramerateLimit(60);
     loadAssets();
     setupUi();
@@ -90,16 +91,17 @@ void Game::setupUi() {
     subtitleText_.setFont(font_);
     timerText_.setFont(font_);
     statusText_.setFont(font_);
+    authorText_.setFont(font_);
 
     titleText_.setPosition({42.0f, 18.0f});
     subtitleText_.setPosition({44.0f, 60.0f});
     timerText_.setPosition({680.0f, 28.0f});
-    statusText_.setPosition({42.0f, 700.0f});
 
     updateText(titleText_, "Sudoku", 34, originalNumberColor_);
     updateText(subtitleText_, "Modern SFML desktop edition", 16, withAlpha(originalNumberColor_, 190));
     updateText(timerText_, "00:00", 28, userNumberColor_);
     updateText(statusText_, "", 18, withAlpha(originalNumberColor_, 200));
+    updateText(authorText_, "By Pratyansh Prateek", 14, withAlpha(originalNumberColor_, 160));
 
     const std::vector<std::pair<std::string, std::string>> buttonSpecs = {
         {"easy", "Easy"},
@@ -372,20 +374,32 @@ void Game::drawButtons() {
 }
 
 void Game::drawFooter() {
+    const float footerTop = windowHeight_ - 24.0f - kFooterHeight;
+
     sf::RectangleShape footer({windowWidth_ - 40.0f, kFooterHeight});
-    footer.setPosition({20.0f, windowHeight_ - 52.0f - kFooterHeight});
+    footer.setPosition({20.0f, footerTop});
     footer.setFillColor(panelColor_);
     footer.setOutlineThickness(1.0f);
     footer.setOutlineColor(withAlpha(originalNumberColor_, 30));
     window_.draw(footer);
 
+    statusText_.setPosition({42.0f, footerTop + 16.0f});
     window_.draw(statusText_);
 
     sf::Text controls(font_);
-    controls.setPosition({42.0f, 726.0f});
-    updateText(controls, "Mouse: select cell or button   Keyboard: 1-9 place value, Backspace/Delete clear, N new, R reset, H hint",
+    controls.setPosition({42.0f, footerTop + 56.0f});
+    updateText(controls, "Mouse: select cell or button   Keyboard: 1-9 place value, Backspace/Delete clear",
         14, withAlpha(originalNumberColor_, 150));
     window_.draw(controls);
+
+    sf::Text shortcuts(font_);
+    shortcuts.setPosition({42.0f, footerTop + 80.0f});
+    updateText(shortcuts, "Shortcuts: N new game   R reset   H hint   Arrow keys move selection",
+        14, withAlpha(originalNumberColor_, 150));
+    window_.draw(shortcuts);
+
+    authorText_.setPosition({640.0f, footerTop + 80.0f});
+    window_.draw(authorText_);
 }
 
 void Game::updateText(sf::Text& text, const std::string& content, unsigned int size, sf::Color color, bool centered) {
