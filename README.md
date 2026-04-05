@@ -10,7 +10,7 @@ The project is structured to work across macOS, Linux, and Windows. Assets are l
 
 ## 🎬 Demo
 
-<video src="https://pratyanshprateek.github.io/uploads/Sudoku-demo.mov" controls width="700"></video>
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Demo-blue?style=for-the-badge)](https://pratyanshprateek.github.io/uploads/Sudoku-demo.mov)
 
 ## Features
 
