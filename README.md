@@ -8,13 +8,9 @@ A complete desktop Sudoku experience built with modern C++ and SFML. This projec
 
 The project is structured to work across macOS, Linux, and Windows. Assets are loaded relative to the executable location, so the bundled font resolves correctly whether you run the app from the project root, the build folder, or by double-clicking the executable.
 
-## Screenshots
+## 🎬 Demo
 
-Add screenshots here after building and running the application. Recommended captures:
-
-- Main game view with selected cell highlight
-- Invalid move state with red conflict cells
-- Completed puzzle or solved board state
+<video src="https://pratyanshprateek.github.io/uploads/Sudoku-demo.mov" controls width="700"></video>
 
 ## Features
 
